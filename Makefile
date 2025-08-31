@@ -23,6 +23,9 @@ help: ## Show this help with grouped commands
 	@echo "🧪 Testing & Quality:"
 	@grep -E '^[a-zA-Z_\-]+:.*##.*\[(test|lint|format|type|quality|check)\]' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*## "}; {printf "  \033[36m%-12s\033[0m %s\n", $$1, $$2}'
 	@echo ""
+	@echo "📚 Documentation:"
+	@grep -E '^[a-zA-Z_\-]+:.*##.*\[docs\]' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*## "}; {printf "  \033[36m%-12s\033[0m %s\n", $$1, $$2}'
+	@echo ""
 	@echo "🛠️  Other Utilities:"
 	@grep -E '^[a-zA-Z_\-]+:.*##[^[]*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*## "}; {printf "  \033[36m%-12s\033[0m %s\n", $$1, $$2}'
 
@@ -52,6 +55,20 @@ type: ## Static type-check with mypy [type]
 
 test: install ## Run full test suite with pytest [test]
 	@$(UV) run pytest tests/ -q
+
+# 📚 Documentation
+docs-install: ## Install documentation dependencies [install]
+	@$(UV) sync --group docs
+
+docs-build: docs-install ## Build HTML documentation [docs]
+	@cd docs && $(UV) run sphinx-build -b html source build/html
+
+docs-serve: docs-build ## Build and serve documentation locally [docs]
+	@echo "📖 Documentation built! Open docs/build/html/index.html in your browser"
+	@echo "   Or run: open docs/build/html/index.html (macOS)"
+
+docs-clean: ## Clean documentation build artifacts [docs]
+	@rm -rf docs/build/
 
 # 🛠️  Other Utilities
 clean: ## Remove caches, build artifacts, and temp files
