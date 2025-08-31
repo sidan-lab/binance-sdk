@@ -18,9 +18,9 @@ sys.path.insert(0, os.path.abspath("../.."))
 
 # -- Project information -----------------------------------------------------
 
-project = "binance-connector"
-copyright = "2023, binance"
-author = "binance"
+project = "binance-sdk"
+copyright = "2023, Binance (Original), 2025, Fork Maintainer"
+author = "Binance, Fork Maintainer"
 
 
 # -- General configuration ---------------------------------------------------

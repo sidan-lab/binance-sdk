@@ -1,15 +1,17 @@
 [project]
 name = "binance-sdk"
 version = "3.12.0"
-description = "This is a lightweight library that works as a connector to Binance public API."
+description = "Modern, lightweight Python SDK for Binance public API - Fork of binance-connector with enhanced tooling and packaging"
 readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "MIT" }
 authors = [
-    { name = "Binance" }
+    { name = "Binance" },
+    { name = "Fork Maintainer", email = "maintainer@example.com" }
 ]
-keywords = ["Binance", "Public API"]
+keywords = ["Binance", "Public API", "SDK", "Trading", "Cryptocurrency", "WebSocket"]
 classifiers = [
+    "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "Intended Audience :: Financial and Insurance Industry",
     "License :: OSI Approved :: MIT License",
@@ -17,6 +19,10 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
     "requests>=2.31.0",
@@ -25,8 +31,11 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/binance/binance-sdk"
-Repository = "https://github.com/binance/binance-sdk"
+Homepage = "https://github.com/YOUR_USERNAME/binance-sdk"
+Repository = "https://github.com/YOUR_USERNAME/binance-sdk"
+Documentation = "https://YOUR_USERNAME.github.io/binance-sdk/"
+"Bug Tracker" = "https://github.com/YOUR_USERNAME/binance-sdk/issues"
+"Original Connector" = "https://github.com/binance/binance-connector-python"
 
 [build-system]
 requires = ["hatchling"]

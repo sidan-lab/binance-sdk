@@ -2,27 +2,22 @@
    :format: html
 
 
-Binance Public API Connector Python
-===================================
+Binance SDK (Python)
+====================
 
 
-.. image:: https://img.shields.io/pypi/v/binance-connector.svg
-   :target: https://pypi.org/project/binance-connector/
-   :alt: PyPI version
-
-
-.. image:: https://img.shields.io/pypi/pyversions/binance-connector
+.. image:: https://img.shields.io/badge/python-3.8%2B-blue
    :target: https://www.python.org/downloads/
    :alt: Python version
 
 
-.. image:: https://img.shields.io/badge/docs-latest-blue
-   :target: https://binance-connector.readthedocs.io/en/stable/)
+.. image:: https://github.com/YOUR_USERNAME/binance-sdk/actions/workflows/docs.yml/badge.svg
+   :target: https://YOUR_USERNAME.github.io/binance-sdk/
    :alt: Documentation
 
 
-.. image:: https://img.shields.io/badge/code_style-black-black
-   :target: https://black.readthedocs.io/en/stable/
+.. image:: https://img.shields.io/badge/code_style-ruff-black
+   :target: https://github.com/astral-sh/ruff
    :alt: Code Style
 
 
@@ -30,11 +25,13 @@ Binance Public API Connector Python
    :target: https://opensource.org/licenses/MIT
    :alt: License: MIT
 
+**🔗 Fork Notice**: This repository is a significantly modified fork of the official `binance-connector-python <https://github.com/binance/binance-connector-python>`_. It has been refactored to use modern Python packaging (pyproject.toml), updated tooling (uv, ruff), and enhanced development workflows.
 
-This is a lightweight library that works as a connector to `Binance public API <https://github.com/binance/binance-spot-api-docs>`_.
+**binance-sdk** is a lightweight, modern Python library for connecting to the `Binance public API <https://github.com/binance/binance-spot-api-docs>`_.
 It's designed to be simple, clean, and easy to use with minimal dependencies.
 
-* Source Code: https://github.com/binance/binance-connector-python
+* **Fork Source Code**: https://github.com/YOUR_USERNAME/binance-sdk
+* **Original Connector**: https://github.com/binance/binance-connector-python
 * Official API document:
 
   * https://github.com/binance/binance-spot-api-docs
@@ -72,13 +69,21 @@ Installation
 
   .. code-block:: bash
 
-     pip install binance-connector
+     pip install binance-sdk
 
-* Alternatively, install with git repository path
+* Using uv (fastest)
 
   .. code-block:: bash
 
-    python -m pip install git+https://github.com/binance/binance-connector-python.git
+     uv add binance-sdk
+
+* From source
+
+  .. code-block:: bash
+
+    git clone https://github.com/YOUR_USERNAME/binance-sdk.git
+    cd binance-sdk
+    uv sync
 
 
 Usage
@@ -116,7 +121,7 @@ RESTful APIs
    response = client.new_order(**params)
    logging.info(response)
 
-Please find `examples <https://github.com/binance/binance-connector-python/tree/master/examples>`_ folder to check for more endpoints.
+Please find `examples <https://github.com/YOUR_USERNAME/binance-sdk/tree/main/examples>`_ folder to check for more endpoints.
 
 
 Websocket
@@ -149,4 +154,4 @@ Websocket
 
    ws_client.stop()
 
-More websocket examples are available in the `examples <https://github.com/binance/binance-connector-python/tree/master/examples>`_ folder
+More websocket examples are available in the `examples <https://github.com/YOUR_USERNAME/binance-sdk/tree/main/examples>`_ folder

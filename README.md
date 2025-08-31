@@ -1,36 +1,73 @@
-# Binance Public API Connector Python
+# Binance SDK (Python)
 
-[![PyPI version](https://img.shields.io/pypi/v/binance-connector)](https://pypi.python.org/pypi/binance-connector)
-[![Python version](https://img.shields.io/pypi/pyversions/binance-connector)](https://www.python.org/downloads/)
+[![Python version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
 [![Documentation](https://github.com/binance/binance-sdk/actions/workflows/docs.yml/badge.svg)](https://binance.github.io/binance-sdk/)
 [![Code Style](https://img.shields.io/badge/code_style-ruff-black)](https://github.com/astral-sh/ruff)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This is a lightweight library that works as a connector to [Binance public API](https://github.com/binance/binance-spot-api-docs)
+> **🔗 Fork Notice**: This repository is a significantly modified fork of the official [binance-connector-python](https://github.com/binance/binance-connector-python). It has been refactored to use modern Python packaging (pyproject.toml), updated tooling (uv, ruff), and enhanced development workflows.
 
-- Supported APIs:
-  - `/api/*`
-  - `/sapi/*`
-  - Spot Websocket Market Stream
-  - Spot User Data Stream
-  - Spot WebSocket API
-- Inclusion of test cases and examples
+**binance-sdk** is a lightweight, modern Python library for connecting to the [Binance public API](https://github.com/binance/binance-spot-api-docs). This fork includes significant improvements over the original connector:
+
+## ✨ **What's New in This Fork**
+- 🏗️ **Modern packaging**: Migrated from setup.py to pyproject.toml with uv package manager
+- 🛠️ **Enhanced tooling**: Ruff for linting/formatting, pre-commit hooks, mypy support
+- 📚 **Automated docs**: GitHub Actions for documentation deployment
+- 🚀 **Improved workflows**: Streamlined development and CI/CD processes
+- 📦 **Simplified imports**: Import as `binance` (not `binance-connector`)
+
+## 🔌 **Supported APIs**
+- `/api/*` - Spot trading endpoints
+- `/sapi/*` - Binance API endpoints
+- Spot Websocket Market Stream
+- Spot User Data Stream
+- Spot WebSocket API
+- Comprehensive test cases and examples
 - Customizable base URL, request timeout and HTTP proxy
-- Response metadata can be displayed
+- Response metadata display
 
-## Installation
+## 📦 **Installation**
 
+### Using pip (recommended)
 ```bash
-pip install binance-connector
+pip install binance-sdk
 ```
 
-## Documentation
+### Using uv (fastest)
+```bash
+uv add binance-sdk
+```
 
-[https://binance-connector.readthedocs.io](https://binance-connector.readthedocs.io)
+### From source
+```bash
+git clone https://github.com/YOUR_USERNAME/binance-sdk.git
+cd binance-sdk
+uv sync
+```
 
-## RESTful APIs
+## 📚 **Documentation**
 
-Usage examples:
+- **API Documentation**: [https://YOUR_USERNAME.github.io/binance-sdk/](https://YOUR_USERNAME.github.io/binance-sdk/)
+- **Original Binance Connector**: [binance-connector.readthedocs.io](https://binance-connector.readthedocs.io)
+
+## 🔄 **Key Differences from Original Connector**
+
+| Feature | Original Connector | This Fork (binance-sdk) |
+|---------|-------------------|-------------------------|
+| **Package Name** | `binance-connector` | `binance-sdk` |
+| **Import** | `from binance.spot import Spot` | `from binance.spot import Spot` ✓ |
+| **Packaging** | setup.py | pyproject.toml + uv |
+| **Linting** | flake8 + black | ruff (faster, more features) |
+| **Pre-commit** | Basic setup | Comprehensive hooks |
+| **Documentation** | ReadTheDocs | GitHub Actions + Pages |
+| **Type Checking** | None | mypy configured |
+| **Python Support** | 3.8+ | 3.8+ (same) |
+
+> **💡 Import Compatibility**: The import statements remain the same as the original connector, so you can easily switch between packages without changing your code!
+
+## 🚀 **Quick Start**
+
+### RESTful APIs
 
 ```python
 from binance.spot import Spot
@@ -451,13 +488,38 @@ from binance.websocket.spot.websocket_client import SpotWebsocketClient as Webso
 ws_client = WebsocketClient(stream_url='wss://stream.testnet.binance.vision')
 ```
 
-## Test Case
+## 🧪 **Development & Testing**
 
-```python
-# In case packages are not installed yet
-pip install -r requirements/requirements-test.txt
+### Running Tests
+```bash
+# Using the modern uv workflow
+make test           # Run all tests
+make test-smoke     # Run smoke tests only
 
-python -m pytest tests/
+# Or manually with uv
+uv run pytest tests/ -q
+```
+
+### Code Quality
+```bash
+make fmt            # Format code with ruff
+make lint           # Lint code with ruff
+make precommit      # Run all pre-commit hooks
+make type           # Type check with mypy
+```
+
+### Documentation
+```bash
+make docs-build     # Build documentation
+make docs-serve     # Build and view documentation
+```
+
+### Development Setup
+```bash
+git clone YOUR_REPO_URL
+cd binance-sdk
+make install        # Install dependencies
+make hooks          # Setup pre-commit hooks
 ```
 
 ## Limitation

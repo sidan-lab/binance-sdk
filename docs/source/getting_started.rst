@@ -10,7 +10,13 @@ Installation
 
 .. code-block:: bash
 
-   pip install binance-connector
+   pip install binance-sdk
+
+Using uv (fastest):
+
+.. code-block:: bash
+
+   uv add binance-sdk
 
 How to Generate the API key
 ---------------------------
@@ -58,7 +64,7 @@ Usage example:
    response = client.new_order(**params)
    print(response)
 
-Please find `examples <https://github.com/binance/binance-connector-python/tree/master/examples/spot>`_ folder to check for more endpoints.
+Please find `examples <https://github.com/YOUR_USERNAME/binance-sdk/tree/main/examples/spot>`_ folder to check for more endpoints.
 
 Base URL
 """"""""
@@ -150,7 +156,7 @@ Usage example:
    ws_client.stop()
 
 The ``stream_url`` defaults to ``wss://ws-api.binance.com/ws-api/v3``.
-More websocket API examples are available in the `examples websocket api <https://github.com/binance/binance-connector-python/tree/master/examples/websocket/spot/websocket_api>`_ folder.
+More websocket API examples are available in the `examples websocket api <https://github.com/YOUR_USERNAME/binance-sdk/tree/main/examples/websocket/spot/websocket_api>`_ folder.
 
 
 Websocket Stream
@@ -174,7 +180,7 @@ Usage example:
    ws_client.stop()
 
 The ``stream_url`` defaults to ``wss://stream.binance.com:9443``.
-More websocket Stream examples are available in the `websocket stream examples <https://github.com/binance/binance-connector-python/tree/master/examples/websocket/spot/websocket_stream>`_ folder.
+More websocket Stream examples are available in the `websocket stream examples <https://github.com/YOUR_USERNAME/binance-sdk/tree/main/examples/websocket/spot/websocket_stream>`_ folder.
 
 
 Heartbeat

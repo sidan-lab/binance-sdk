@@ -37,7 +37,7 @@ def test_API_initial():
         "application/json;charset=utf-8"
     )
     client.session.headers.should.have.key("User-Agent").which.should.equal(
-        "binance-connector-python/" + __version__
+        "binance-sdk-python/" + __version__
     )
     client.session.headers.should.have.key("X-MBX-APIKEY").which.should.be.none
     client._logger.should.be(logging.getLogger("binance.api"))
