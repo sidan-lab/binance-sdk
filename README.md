@@ -1,13 +1,13 @@
 # Binance SDK (Python)
 
 [![Python version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
-[![Documentation](https://github.com/sidan-lab/sidan-binance-sdk/actions/workflows/docs.yml/badge.svg)](https://sidan-lab.github.io/sidan-binance-sdk/)
+[![Documentation](https://github.com/sidan-lab/sidan-binance-py/actions/workflows/docs.yml/badge.svg)](https://sidan-lab.github.io/sidan-binance-py/)
 [![Code Style](https://img.shields.io/badge/code_style-ruff-black)](https://github.com/astral-sh/ruff)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > **🔗 Fork Notice**: This repository is a significantly modified fork of the official [binance-connector-python](https://github.com/binance/binance-connector-python). It has been refactored to use modern Python packaging (pyproject.toml), updated tooling (uv, ruff), and enhanced development workflows.
 
-**sidan-binance-sdk** is a lightweight, modern Python library for connecting to the [Binance public API](https://github.com/binance/binance-spot-api-docs). This fork includes significant improvements over the original connector:
+**sidan-binance-py** is a lightweight, modern Python library for connecting to the [Binance public API](https://github.com/binance/binance-spot-api-docs). This fork includes significant improvements over the original connector:
 
 ## ✨ **What's New in This Fork**
 
@@ -33,33 +33,33 @@
 ### Using pip (recommended)
 
 ```bash
-pip install sidan-binance-sdk
+pip install sidan-binance-py
 ```
 
 ### Using uv (fastest)
 
 ```bash
-uv add sidan-binance-sdk
+uv add sidan-binance-py
 ```
 
 ### From source
 
 ```bash
-git clone https://github.com/sidan-lab/sidan-binance-sdk.git
-cd sidan-binance-sdk
+git clone https://github.com/sidan-lab/sidan-binance-py.git
+cd sidan-binance-py
 uv sync
 ```
 
 ## 📚 **Documentation**
 
-- **API Documentation**: [https://sidan-lab.github.io/sidan-binance-sdk/](https://sidan-lab.github.io/sidan-binance-sdk/)
+- **API Documentation**: [https://sidan-lab.github.io/sidan-binance-py/](https://sidan-lab.github.io/sidan-binance-py/)
 - **Original Binance Connector**: [binance-connector.readthedocs.io](https://binance-connector.readthedocs.io)
 
 ## 🔄 **Key Differences from Original Connector**
 
-| Feature            | Original Connector              | This Fork (sidan-binance-sdk)     |
+| Feature            | Original Connector              | This Fork (sidan-binance-py)      |
 | ------------------ | ------------------------------- | --------------------------------- |
-| **Package Name**   | `binance-connector`             | `sidan-binance-sdk`               |
+| **Package Name**   | `binance-connector`             | `sidan-binance-py`                |
 | **Import**         | `from binance.spot import Spot` | `from binance.spot import Spot` ✓ |
 | **Packaging**      | setup.py                        | pyproject.toml + uv               |
 | **Linting**        | flake8 + black                  | ruff (faster, more features)      |
@@ -526,7 +526,7 @@ make docs-serve     # Build and view documentation
 
 ```bash
 git clone YOUR_REPO_URL
-cd sidan-binance-sdk
+cd sidan-binance-py
 make install        # Install dependencies
 make hooks          # Setup pre-commit hooks
 ```

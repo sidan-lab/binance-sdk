@@ -56,7 +56,7 @@ class API:
         self.session.headers.update(
             {
                 "Content-Type": "application/json;charset=utf-8",
-                "User-Agent": "sidan-binance-sdk-python/" + __version__,
+                "User-Agent": "sidan-binance-py-python/" + __version__,
                 "X-MBX-APIKEY": api_key,
             }
         )

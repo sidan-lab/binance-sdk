@@ -1,5 +1,5 @@
 [project]
-name = "sidan-binance-sdk"
+name = "sidan-binance-py"
 version = "0.0.1"
 description = "Modern, lightweight Python SDK for Binance public API - Fork of binance-connector with enhanced tooling and packaging"
 readme = "README.md"
@@ -31,10 +31,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/sidan-lab/sidan-binance-sdk"
-Repository = "https://github.com/sidan-lab/sidan-binance-sdk"
-Documentation = "https://sidan-lab.github.io/sidan-binance-sdk/"
-"Bug Tracker" = "https://github.com/sidan-lab/sidan-binance-sdk/issues"
+Homepage = "https://github.com/sidan-lab/sidan-binance-py"
+Repository = "https://github.com/sidan-lab/sidan-binance-py"
+Documentation = "https://sidan-lab.github.io/sidan-binance-py/"
+"Bug Tracker" = "https://github.com/sidan-lab/sidan-binance-py/issues"
 "Original Connector" = "https://github.com/binance/binance-connector-python"
 
 [build-system]
