@@ -1,6 +1,6 @@
 [project]
 name = "sidan-binance-sdk"
-version = "3.12.0"
+version = "0.0.1"
 description = "Modern, lightweight Python SDK for Binance public API - Fork of binance-connector with enhanced tooling and packaging"
 readme = "README.md"
 requires-python = ">=3.8"
