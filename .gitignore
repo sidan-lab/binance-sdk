@@ -7,7 +7,7 @@ __pycache__
 .DS_Store
 
 # uv
-uv.lock
+# uv.lock
 
 # Environments
 .env
