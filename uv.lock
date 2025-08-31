@@ -58,7 +58,7 @@ wheels = [
 ]
 
 [[package]]
-name = "sidan-binance"
+name = "sidan-binance-sdk"
 version = "3.12.0"
 source = { editable = "." }
 dependencies = [

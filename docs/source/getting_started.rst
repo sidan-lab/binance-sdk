@@ -10,13 +10,13 @@ Installation
 
 .. code-block:: bash
 
-   pip install sidan-binance
+   pip install sidan-binance-sdk
 
 Using uv (fastest):
 
 .. code-block:: bash
 
-   uv add sidan-binance
+   uv add sidan-binance-sdk
 
 How to Generate the API key
 ---------------------------
@@ -64,7 +64,7 @@ Usage example:
    response = client.new_order(**params)
    print(response)
 
-Please find `examples <https://github.com/sidan-lab/sidan-binance/tree/main/examples/spot>`_ folder to check for more endpoints.
+Please find `examples <https://github.com/sidan-lab/sidan-binance-sdk/tree/main/examples/spot>`_ folder to check for more endpoints.
 
 Base URL
 """"""""
@@ -156,7 +156,7 @@ Usage example:
    ws_client.stop()
 
 The ``stream_url`` defaults to ``wss://ws-api.binance.com/ws-api/v3``.
-More websocket API examples are available in the `examples websocket api <https://github.com/sidan-lab/sidan-binance/tree/main/examples/websocket/spot/websocket_api>`_ folder.
+More websocket API examples are available in the `examples websocket api <https://github.com/sidan-lab/sidan-binance-sdk/tree/main/examples/websocket/spot/websocket_api>`_ folder.
 
 
 Websocket Stream
@@ -180,7 +180,7 @@ Usage example:
    ws_client.stop()
 
 The ``stream_url`` defaults to ``wss://stream.binance.com:9443``.
-More websocket Stream examples are available in the `websocket stream examples <https://github.com/sidan-lab/sidan-binance/tree/main/examples/websocket/spot/websocket_stream>`_ folder.
+More websocket Stream examples are available in the `websocket stream examples <https://github.com/sidan-lab/sidan-binance-sdk/tree/main/examples/websocket/spot/websocket_stream>`_ folder.
 
 
 Heartbeat

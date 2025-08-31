@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.abspath("../.."))
 
 # -- Project information -----------------------------------------------------
 
-project = "sidan-binance"
+project = "sidan-binance-sdk"
 copyright = "2023, Binance (Original), 2025, Fork Maintainer"
 author = "Binance, Fork Maintainer"
 
