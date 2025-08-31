@@ -1,4 +1,4 @@
-# Makefile for binance-sdk (uv-managed Python project)
+# Makefile for sidan-binance (uv-managed Python project)
 # Usage examples:
 #   make install       # create venv and install project + dev deps
 #   make test          # run pytest

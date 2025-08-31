@@ -1,12 +1,12 @@
-import responses
+import logging
 
 import requests
-from tests.util import random_str, mock_http_response
+import responses
+
 from binance.__version__ import __version__
 from binance.api import API
-from binance.error import ParameterRequiredError, ServerError
-from binance.error import ClientError
-import logging
+from binance.error import ClientError, ParameterRequiredError, ServerError
+from tests.util import mock_http_response, random_str
 
 mock_item = {"key_1": "value_1", "key_2": "value_2"}
 mock_error_body = "<HTML><HEAD><META HTTP-EQUIV></HEAD></HTML>"
@@ -37,7 +37,7 @@ def test_API_initial():
         "application/json;charset=utf-8"
     )
     client.session.headers.should.have.key("User-Agent").which.should.equal(
-        "binance-sdk-python/" + __version__
+        "sidan-binance-python/" + __version__
     )
     client.session.headers.should.have.key("X-MBX-APIKEY").which.should.be.none
     client._logger.should.be(logging.getLogger("binance.api"))

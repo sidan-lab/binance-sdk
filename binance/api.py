@@ -1,14 +1,19 @@
 import json
-from json import JSONDecodeError
 import logging
+from json import JSONDecodeError
+
 import requests
-from .__version__ import __version__
+
 from binance.error import ClientError, ServerError
-from binance.lib.utils import get_timestamp
-from binance.lib.utils import cleanNoneValue
-from binance.lib.utils import encoded_string
-from binance.lib.utils import check_required_parameter
-from binance.lib.authentication import hmac_hashing, rsa_signature, ed25519_signature
+from binance.lib.authentication import ed25519_signature, hmac_hashing, rsa_signature
+from binance.lib.utils import (
+    check_required_parameter,
+    cleanNoneValue,
+    encoded_string,
+    get_timestamp,
+)
+
+from .__version__ import __version__
 
 
 class API:
@@ -51,7 +56,7 @@ class API:
         self.session.headers.update(
             {
                 "Content-Type": "application/json;charset=utf-8",
-                "User-Agent": "binance-sdk-python/" + __version__,
+                "User-Agent": "sidan-binance-python/" + __version__,
                 "X-MBX-APIKEY": api_key,
             }
         )

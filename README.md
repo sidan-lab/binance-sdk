@@ -1,15 +1,16 @@
 # Binance SDK (Python)
 
 [![Python version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
-[![Documentation](https://github.com/binance/binance-sdk/actions/workflows/docs.yml/badge.svg)](https://binance.github.io/binance-sdk/)
+[![Documentation](https://github.com/binance/sidan-binance/actions/workflows/docs.yml/badge.svg)](https://binance.github.io/sidan-binance/)
 [![Code Style](https://img.shields.io/badge/code_style-ruff-black)](https://github.com/astral-sh/ruff)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > **🔗 Fork Notice**: This repository is a significantly modified fork of the official [binance-connector-python](https://github.com/binance/binance-connector-python). It has been refactored to use modern Python packaging (pyproject.toml), updated tooling (uv, ruff), and enhanced development workflows.
 
-**binance-sdk** is a lightweight, modern Python library for connecting to the [Binance public API](https://github.com/binance/binance-spot-api-docs). This fork includes significant improvements over the original connector:
+**sidan-binance** is a lightweight, modern Python library for connecting to the [Binance public API](https://github.com/binance/binance-spot-api-docs). This fork includes significant improvements over the original connector:
 
 ## ✨ **What's New in This Fork**
+
 - 🏗️ **Modern packaging**: Migrated from setup.py to pyproject.toml with uv package manager
 - 🛠️ **Enhanced tooling**: Ruff for linting/formatting, pre-commit hooks, mypy support
 - 📚 **Automated docs**: GitHub Actions for documentation deployment
@@ -17,6 +18,7 @@
 - 📦 **Simplified imports**: Import as `binance` (not `binance-connector`)
 
 ## 🔌 **Supported APIs**
+
 - `/api/*` - Spot trading endpoints
 - `/sapi/*` - Binance API endpoints
 - Spot Websocket Market Stream
@@ -29,39 +31,42 @@
 ## 📦 **Installation**
 
 ### Using pip (recommended)
+
 ```bash
-pip install binance-sdk
+pip install sidan-binance
 ```
 
 ### Using uv (fastest)
+
 ```bash
-uv add binance-sdk
+uv add sidan-binance
 ```
 
 ### From source
+
 ```bash
-git clone https://github.com/YOUR_USERNAME/binance-sdk.git
-cd binance-sdk
+git clone https://github.com/sidan-lab/sidan-binance.git
+cd sidan-binance
 uv sync
 ```
 
 ## 📚 **Documentation**
 
-- **API Documentation**: [https://YOUR_USERNAME.github.io/binance-sdk/](https://YOUR_USERNAME.github.io/binance-sdk/)
+- **API Documentation**: [https://sidan-lab.github.io/sidan-binance/](https://sidan-lab.github.io/sidan-binance/)
 - **Original Binance Connector**: [binance-connector.readthedocs.io](https://binance-connector.readthedocs.io)
 
 ## 🔄 **Key Differences from Original Connector**
 
-| Feature | Original Connector | This Fork (binance-sdk) |
-|---------|-------------------|-------------------------|
-| **Package Name** | `binance-connector` | `binance-sdk` |
-| **Import** | `from binance.spot import Spot` | `from binance.spot import Spot` ✓ |
-| **Packaging** | setup.py | pyproject.toml + uv |
-| **Linting** | flake8 + black | ruff (faster, more features) |
-| **Pre-commit** | Basic setup | Comprehensive hooks |
-| **Documentation** | ReadTheDocs | GitHub Actions + Pages |
-| **Type Checking** | None | mypy configured |
-| **Python Support** | 3.8+ | 3.8+ (same) |
+| Feature            | Original Connector              | This Fork (sidan-binance)         |
+| ------------------ | ------------------------------- | --------------------------------- |
+| **Package Name**   | `binance-connector`             | `sidan-binance`                   |
+| **Import**         | `from binance.spot import Spot` | `from binance.spot import Spot` ✓ |
+| **Packaging**      | setup.py                        | pyproject.toml + uv               |
+| **Linting**        | flake8 + black                  | ruff (faster, more features)      |
+| **Pre-commit**     | Basic setup                     | Comprehensive hooks               |
+| **Documentation**  | ReadTheDocs                     | GitHub Actions + Pages            |
+| **Type Checking**  | None                            | mypy configured                   |
+| **Python Support** | 3.8+                            | 3.8+ (same)                       |
 
 > **💡 Import Compatibility**: The import statements remain the same as the original connector, so you can easily switch between packages without changing your code!
 
@@ -491,6 +496,7 @@ ws_client = WebsocketClient(stream_url='wss://stream.testnet.binance.vision')
 ## 🧪 **Development & Testing**
 
 ### Running Tests
+
 ```bash
 # Using the modern uv workflow
 make test           # Run all tests
@@ -501,6 +507,7 @@ uv run pytest tests/ -q
 ```
 
 ### Code Quality
+
 ```bash
 make fmt            # Format code with ruff
 make lint           # Lint code with ruff
@@ -509,15 +516,17 @@ make type           # Type check with mypy
 ```
 
 ### Documentation
+
 ```bash
 make docs-build     # Build documentation
 make docs-serve     # Build and view documentation
 ```
 
 ### Development Setup
+
 ```bash
 git clone YOUR_REPO_URL
-cd binance-sdk
+cd sidan-binance
 make install        # Install dependencies
 make hooks          # Setup pre-commit hooks
 ```

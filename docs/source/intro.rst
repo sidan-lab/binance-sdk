@@ -11,8 +11,8 @@ Binance SDK (Python)
    :alt: Python version
 
 
-.. image:: https://github.com/YOUR_USERNAME/binance-sdk/actions/workflows/docs.yml/badge.svg
-   :target: https://YOUR_USERNAME.github.io/binance-sdk/
+.. image:: https://github.com/sidan-lab/sidan-binance/actions/workflows/docs.yml/badge.svg
+   :target: https://sidan-lab.github.io/sidan-binance/
    :alt: Documentation
 
 
@@ -27,10 +27,10 @@ Binance SDK (Python)
 
 **🔗 Fork Notice**: This repository is a significantly modified fork of the official `binance-connector-python <https://github.com/binance/binance-connector-python>`_. It has been refactored to use modern Python packaging (pyproject.toml), updated tooling (uv, ruff), and enhanced development workflows.
 
-**binance-sdk** is a lightweight, modern Python library for connecting to the `Binance public API <https://github.com/binance/binance-spot-api-docs>`_.
+**sidan-binance** is a lightweight, modern Python library for connecting to the `Binance public API <https://github.com/binance/binance-spot-api-docs>`_.
 It's designed to be simple, clean, and easy to use with minimal dependencies.
 
-* **Fork Source Code**: https://github.com/YOUR_USERNAME/binance-sdk
+* **Fork Source Code**: https://github.com/sidan-lab/sidan-binance
 * **Original Connector**: https://github.com/binance/binance-connector-python
 * Official API document:
 
@@ -69,20 +69,20 @@ Installation
 
   .. code-block:: bash
 
-     pip install binance-sdk
+     pip install sidan-binance
 
 * Using uv (fastest)
 
   .. code-block:: bash
 
-     uv add binance-sdk
+     uv add sidan-binance
 
 * From source
 
   .. code-block:: bash
 
-    git clone https://github.com/YOUR_USERNAME/binance-sdk.git
-    cd binance-sdk
+    git clone https://github.com/sidan-lab/sidan-binance.git
+    cd sidan-binance
     uv sync
 
 
@@ -121,7 +121,7 @@ RESTful APIs
    response = client.new_order(**params)
    logging.info(response)
 
-Please find `examples <https://github.com/YOUR_USERNAME/binance-sdk/tree/main/examples>`_ folder to check for more endpoints.
+Please find `examples <https://github.com/sidan-lab/sidan-binance/tree/main/examples>`_ folder to check for more endpoints.
 
 
 Websocket
@@ -154,4 +154,4 @@ Websocket
 
    ws_client.stop()
 
-More websocket examples are available in the `examples <https://github.com/YOUR_USERNAME/binance-sdk/tree/main/examples>`_ folder
+More websocket examples are available in the `examples <https://github.com/sidan-lab/sidan-binance/tree/main/examples>`_ folder
