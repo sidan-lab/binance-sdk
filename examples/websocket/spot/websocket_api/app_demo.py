@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
 """
-    A simple demo for how to:
-    - Create a connection to the websocket api
-    - Create a connection to the websocket stream
-    - Subscribe to the user data stream from websocket stream
-    - Create a new order from websocket api
+A simple demo for how to:
+- Create a connection to the websocket api
+- Create a connection to the websocket stream
+- Subscribe to the user data stream from websocket stream
+- Create a new order from websocket api
 """
 
 import logging

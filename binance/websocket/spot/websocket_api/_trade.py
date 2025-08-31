@@ -744,7 +744,7 @@ def new_oco_order(
     quantity: float,
     aboveType: str,
     belowType: str,
-    **kwargs
+    **kwargs,
 ):
     """Place new Order list - OCO (TRADE)
     Args:
@@ -922,7 +922,7 @@ def new_oto_order(
     pendingType: str,
     pendingSide: str,
     pendingQuantity: float,
-    **kwargs
+    **kwargs,
 ):
     """Place new Order list - OTO (TRADE)
     Args:
@@ -1089,7 +1089,7 @@ def new_otoco_order(
     pendingSide: str,
     pendingQuantity: float,
     pendingAboveType: str,
-    **kwargs
+    **kwargs,
 ):
     """Place new Order list - OTOCO (TRADE)
     Args:

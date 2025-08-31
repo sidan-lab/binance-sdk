@@ -122,7 +122,7 @@ def place_limit_order(
     limitPrice: float,
     side: str,
     expiredType: str,
-    **kwargs
+    **kwargs,
 ):
     """Place limit order (USER_DATA)
 

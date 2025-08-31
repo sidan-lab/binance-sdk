@@ -169,7 +169,7 @@ def mining_hashrate_resale_request(
     endDate: int,
     toPoolUser: str,
     hashRate: int,
-    **kwargs
+    **kwargs,
 ):
     """Hashrate Resale Request (USER_DATA)
 

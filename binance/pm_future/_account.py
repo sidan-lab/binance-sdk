@@ -1,6 +1,3 @@
-from binance.lib.utils import check_required_parameter, check_required_parameters
-
-
 def balance(self, **kwargs):
     """
     https://developers.binance.com/docs/derivatives/portfolio-margin/account

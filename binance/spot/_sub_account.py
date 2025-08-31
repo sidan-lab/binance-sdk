@@ -359,7 +359,7 @@ def sub_account_futures_asset_transfer(
     futuresType: int,
     asset: str,
     amount: float,
-    **kwargs
+    **kwargs,
 ):
     """Query Sub-account Futures Asset Transfer History(For Master Account)
 

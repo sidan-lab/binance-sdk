@@ -1,8 +1,6 @@
 import json
 import threading
-import time
 
-from binance.lib.utils import check_required_parameter, check_required_parameters
 from binance.lib.websocket import WebSocket
 
 

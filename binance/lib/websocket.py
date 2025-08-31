@@ -1,11 +1,10 @@
 import time
 
 import requests
-from binance.websocket.binance_socket_manager import BinanceSocketManager
 from binance.websocket.websocket_client import BinanceWebsocketClient
 
 
-class WebSocket(object):
+class WebSocket:
     def __init__(
         self,
         api_key=None,

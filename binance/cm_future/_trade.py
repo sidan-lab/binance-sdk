@@ -2,7 +2,7 @@ from binance.lib.utils import check_required_parameter, check_required_parameter
 
 
 def new_order(self, symbol: str, side: str, type: str, **kwargs):
-    """New Order (TRADE)
+    r"""New Order (TRADE)
 
     Post a new order
 

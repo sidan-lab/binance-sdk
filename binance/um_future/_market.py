@@ -1,8 +1,8 @@
-from binance.error import ParameterArgumentError
+from typing import Optional
 from binance.lib.utils import check_required_parameter
 
 
-def ticker_24hr(self, symbol: str = None, **kwargs):
+def ticker_24hr(self, symbol: Optional[str] = None, **kwargs):
     """24hr Ticker Price Change Statistics
 
     GET /fapi/v1/ticker/24hr

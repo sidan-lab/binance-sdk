@@ -1,10 +1,11 @@
+from typing import Optional
 from binance.error import ParameterArgumentError
 from binance.lib.utils import (
     check_required_parameter,
+    check_required_parameters,
     check_type_parameter,
     convert_list_to_json_array,
 )
-from binance.lib.utils import check_required_parameters
 
 
 def ping(self):
@@ -36,7 +37,10 @@ def time(self):
 
 
 def exchange_info(
-    self, symbol: str = None, symbols: list = None, permissions: list = None
+    self,
+    symbol: Optional[str] = None,
+    symbols: Optional[list] = None,
+    permissions: Optional[list] = None,
 ):
     """Exchange Information
     Current exchange trading rules and symbol information
@@ -209,7 +213,9 @@ def avg_price(self, symbol: str):
     return self.query("/api/v3/avgPrice", params)
 
 
-def ticker_24hr(self, symbol: str = None, symbols: list = None, **kwargs):
+def ticker_24hr(
+    self, symbol: Optional[str] = None, symbols: Optional[list] = None, **kwargs
+):
     """24hr Ticker Price Change Statistics
 
     GET /api/v3/ticker/24hr
@@ -232,7 +238,9 @@ def ticker_24hr(self, symbol: str = None, symbols: list = None, **kwargs):
     return self.query("/api/v3/ticker/24hr", params)
 
 
-def trading_day_ticker(self, symbol: str = None, symbols: list = None):
+def trading_day_ticker(
+    self, symbol: Optional[str] = None, symbols: Optional[list] = None
+):
     """Trading Day Ticker
 
     GET /api/v3/ticker/tradingDay
@@ -254,7 +262,7 @@ def trading_day_ticker(self, symbol: str = None, symbols: list = None):
     return self.query("/api/v3/ticker/tradingDay", params)
 
 
-def ticker_price(self, symbol: str = None, symbols: list = None):
+def ticker_price(self, symbol: Optional[str] = None, symbols: Optional[list] = None):
     """Symbol Price Ticker
 
     GET /api/v3/ticker/price
@@ -273,7 +281,7 @@ def ticker_price(self, symbol: str = None, symbols: list = None):
     return self.query("/api/v3/ticker/price", params)
 
 
-def book_ticker(self, symbol: str = None, symbols: list = None):
+def book_ticker(self, symbol: Optional[str] = None, symbols: Optional[list] = None):
     """Symbol Order Book Ticker
 
     GET /api/v3/ticker/bookTicker
@@ -292,7 +300,9 @@ def book_ticker(self, symbol: str = None, symbols: list = None):
     return self.query("/api/v3/ticker/bookTicker", params)
 
 
-def rolling_window_ticker(self, symbol: str = None, symbols: list = None, **kwargs):
+def rolling_window_ticker(
+    self, symbol: Optional[str] = None, symbols: Optional[list] = None, **kwargs
+):
     """Rolling window price change statistics
 
     The window used to compute statistics is typically slightly wider than requested windowSize.

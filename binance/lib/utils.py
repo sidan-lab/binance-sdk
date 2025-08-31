@@ -1,6 +1,7 @@
 import json
 import time
 import uuid
+from typing import Optional
 
 from urllib.parse import urlparse
 from collections import OrderedDict
@@ -40,7 +41,7 @@ def check_required_parameters(params):
 
 
 def check_enum_parameter(value, enum_class):
-    if value not in set(item.value for item in enum_class):
+    if value not in {item.value for item in enum_class}:
         raise ParameterValueError([value])
 
 
@@ -64,7 +65,7 @@ def convert_list_to_json_array(symbols):
     return res.replace(" ", "")
 
 
-def config_logging(logging, logging_level, log_file: str = None):
+def config_logging(logging, logging_level, log_file: Optional[str] = None):
     """Configures logging to provide a more detailed log format, which includes date time in UTC
     Example: 2021-11-02 19:42:04.849 UTC <logging_level> <log_name>: <log_message>
 
@@ -89,9 +90,9 @@ def get_uuid():
     return str(uuid.uuid4())
 
 
-def purge_map(map: map):
+def purge_map(map_dict: dict):
     """Remove None values from map"""
-    return {k: v for k, v in map.items() if v is not None and v != "" and v != 0}
+    return {k: v for k, v in map_dict.items() if v is not None and v != "" and v != 0}
 
 
 def websocket_api_signature(api_key: str, api_secret: str, parameters: dict):

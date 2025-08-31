@@ -16,7 +16,7 @@ logging.info(client.account(recvWindow=6000))
 
 # RSA authentication with RSA key
 api_key = ""
-with open("/Users/john/ssl/private_key.pem", "r") as f:
+with open("/Users/john/ssl/private_key.pem") as f:
     private_key = f.read()
 
 client = Client(
@@ -26,7 +26,7 @@ logging.info(client.account())
 
 
 api_key = ""
-with open("/Users/john/ssl/private_key.pem", "r") as f:
+with open("/Users/john/ssl/private_key.pem") as f:
     private_key = f.read()
 
 client = Client(

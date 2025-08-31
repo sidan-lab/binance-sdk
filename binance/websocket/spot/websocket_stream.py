@@ -46,7 +46,7 @@ class SpotWebsocketStreamClient(BinanceWebsocketClient):
 
         Update Speed: Real-time
         """
-        stream_name = "{}@aggTrade".format(symbol.lower())
+        stream_name = f"{symbol.lower()}@aggTrade"
 
         self.send_message_to_server(stream_name, action=action, id=id)
 
@@ -60,7 +60,7 @@ class SpotWebsocketStreamClient(BinanceWebsocketClient):
         Update Speed: Real-time
         """
 
-        stream_name = "{}@trade".format(symbol.lower())
+        stream_name = f"{symbol.lower()}@trade"
 
         self.send_message_to_server(stream_name, action=action, id=id)
 
@@ -92,7 +92,7 @@ class SpotWebsocketStreamClient(BinanceWebsocketClient):
 
         Update Speed: 1000ms for 1s, 2000ms for the other intervals
         """
-        stream_name = "{}@kline_{}".format(symbol.lower(), interval)
+        stream_name = f"{symbol.lower()}@kline_{interval}"
 
         self.send_message_to_server(stream_name, action=action, id=id)
 
@@ -124,7 +124,7 @@ class SpotWebsocketStreamClient(BinanceWebsocketClient):
 
         Update Speed: 1000ms for 1s, 2000ms for the other intervals
         """
-        stream_name = "{}@kline_{}@+08:00".format(symbol.lower(), interval)
+        stream_name = f"{symbol.lower()}@kline_{interval}@+08:00"
 
         self.send_message_to_server(stream_name, action=action, id=id)
 
@@ -143,7 +143,7 @@ class SpotWebsocketStreamClient(BinanceWebsocketClient):
         if symbol is None:
             stream_name = "!miniTicker@arr"
         else:
-            stream_name = "{}@miniTicker".format(symbol.lower())
+            stream_name = f"{symbol.lower()}@miniTicker"
 
         self.send_message_to_server(stream_name, action=action, id=id)
 
@@ -162,7 +162,7 @@ class SpotWebsocketStreamClient(BinanceWebsocketClient):
         if symbol is None:
             stream_name = "!ticker@arr"
         else:
-            stream_name = "{}@ticker".format(symbol.lower())
+            stream_name = f"{symbol.lower()}@ticker"
         self.send_message_to_server(stream_name, action=action, id=id)
 
     def book_ticker(self, symbol, id=None, action=None, **kwargs):
@@ -176,7 +176,7 @@ class SpotWebsocketStreamClient(BinanceWebsocketClient):
         """
 
         self.send_message_to_server(
-            "{}@bookTicker".format(symbol.lower()), action=action, id=id
+            f"{symbol.lower()}@bookTicker", action=action, id=id
         )
 
     def partial_book_depth(
@@ -191,7 +191,7 @@ class SpotWebsocketStreamClient(BinanceWebsocketClient):
         Update Speed: 1000ms or 100ms
         """
         self.send_message_to_server(
-            "{}@depth{}@{}ms".format(symbol.lower(), level, speed), id=id, action=action
+            f"{symbol.lower()}@depth{level}@{speed}ms", id=id, action=action
         )
 
     def rolling_window_ticker(self, symbol: str, windowSize: str, id=None, action=None):
@@ -206,7 +206,7 @@ class SpotWebsocketStreamClient(BinanceWebsocketClient):
         Note: This stream is different from the <symbol>@ticker stream. The open time "O" always starts on a minute, while the closing time "C" is the current time of the update. As such, the effective window might be up to 59999ms wider that <window_size>.
         """
         self.send_message_to_server(
-            "{}@ticker_{}".format(symbol.lower(), windowSize), id=id, action=action
+            f"{symbol.lower()}@ticker_{windowSize}", id=id, action=action
         )
 
     def rolling_window_ticker_all_symbols(self, windowSize: str, id=None, action=None):
@@ -220,9 +220,7 @@ class SpotWebsocketStreamClient(BinanceWebsocketClient):
 
         Update Speed: 1000ms
         """
-        self.send_message_to_server(
-            "!ticker_{}@arr".format(windowSize), id=id, action=action
-        )
+        self.send_message_to_server(f"!ticker_{windowSize}@arr", id=id, action=action)
 
     def diff_book_depth(self, symbol: str, speed=1000, id=None, action=None, **kwargs):
         """Diff. Depth Stream
@@ -235,7 +233,7 @@ class SpotWebsocketStreamClient(BinanceWebsocketClient):
         """
 
         self.send_message_to_server(
-            "{}@depth@{}ms".format(symbol.lower(), speed), action=action, id=id
+            f"{symbol.lower()}@depth@{speed}ms", action=action, id=id
         )
 
     def user_data(self, listen_key: str, id=None, action=None, **kwargs):

@@ -87,11 +87,11 @@ class BinanceSocketManager(threading.Thread):
                 elif isinstance(e, WebSocketTimeoutException):
                     self.logger.error("Websocket connection timeout")
                 else:
-                    self.logger.error("Websocket exception: {}".format(e))
+                    self.logger.error(f"Websocket exception: {e}")
                 self._handle_exception(e)
                 break
             except Exception as e:
-                self.logger.error("Exception in read_data: {}".format(e))
+                self.logger.error(f"Exception in read_data: {e}")
                 self._handle_exception(e)
                 break
 
@@ -132,7 +132,7 @@ class BinanceSocketManager(threading.Thread):
             try:
                 callback(self, *args)
             except Exception as e:
-                self.logger.error("Error from callback {}: {}".format(callback, e))
+                self.logger.error(f"Error from callback {callback}: {e}")
                 self._handle_exception(e)
 
     def _handle_exception(self, e):

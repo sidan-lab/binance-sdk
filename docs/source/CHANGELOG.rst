@@ -116,7 +116,7 @@ Removed
   * ``GET /sapi/v1/blvt/userLimit``
 
 * Wallet
-  
+
   * ``POST /sapi/v1/asset/convert-transfer``
   * ``GET /sapi/v1/asset/convert-transfer/queryByPage``
   * ``GET /sapi/v1/capital/contract/convertible-coins``
@@ -148,7 +148,7 @@ Added
 
     * ``POST /api/v3/orderList/oto``
     * ``POST /api/v3/orderList/otoco``
-  
+
   * Websocket API
 
     * ``orderList.place.oto``

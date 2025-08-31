@@ -1,6 +1,5 @@
-from binance.lib.utils import check_required_parameter
-from binance.lib.utils import check_required_parameters
 from binance.error import ParameterArgumentError
+from binance.lib.utils import check_required_parameter, check_required_parameters
 
 
 def borrow_repay(
@@ -485,7 +484,7 @@ def new_margin_oco_order(
     quantity: float,
     price: float,
     stopPrice: float,
-    **kwargs
+    **kwargs,
 ):
     """Margin Account New OCO (TRADE)
 
@@ -852,10 +851,10 @@ def get_a_future_hourly_interest_rate(self, assets: str, isIsolated: bool, **kwa
     check_required_parameters([[assets, "assets"], [isIsolated, "isIsolated"]])
 
     if isIsolated:
-        isIsolated = "TRUE"
+        isolated_str = "TRUE"
     else:
-        isIsolated = "FALSE"
-    params = {"assets": assets, "isIsolated": isIsolated, **kwargs}
+        isolated_str = "FALSE"
+    params = {"assets": assets, "isIsolated": isolated_str, **kwargs}
     url_path = "/sapi/v1/margin/next-hourly-interest-rate"
     return self.sign_request("GET", url_path, params)
 
@@ -928,7 +927,7 @@ def margin_new_oto_order(
     pendingType: str,
     pendingSide: str,
     pendingQuantity: float,
-    **kwargs
+    **kwargs,
 ):
     """Margin Account New OTO (TRADE)
 
@@ -1002,7 +1001,7 @@ def margin_new_otoco_order(
     pendingSide: str,
     pendingQuantity: float,
     pendingAboveType: str,
-    **kwargs
+    **kwargs,
 ):
     """Margin Account New OTOCO (TRADE)
 

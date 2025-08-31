@@ -78,7 +78,7 @@ Adhering to the following process is the best way to get your work included in t
     - If reasonable (ex: new endpoint), add test file to the `/tests` folder - use [pytest](https://docs.pytest.org/en/6.2.x/contents.html) to check if all tests are passed.
     - If reasonable (ex: new endpoint), add documentation to the `/docs` folder - please refer to [reStructuredText](https://devguide.python.org/documenting/);
     - Write changes to `CHANGELOG.md` and `CHANGELOG.rst` under the `Unreleased` section - please create the section if not existing yet, this is later to be converted into the verion and date of release;
-    - Make sure there's no typos and the namings are simple and not ambiguous; 
+    - Make sure there's no typos and the namings are simple and not ambiguous;
 
 5.  Commit your changes, taking in attention these [git commit message guidelines](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
 

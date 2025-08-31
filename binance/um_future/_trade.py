@@ -2,7 +2,7 @@ from binance.lib.utils import check_required_parameter, check_required_parameter
 
 
 def new_order(self, symbol: str, side: str, type: str, **kwargs):
-    """New Order (TRADE)
+    r"""New Order (TRADE)
 
     Post a new order
 
@@ -64,7 +64,6 @@ def get_order(self, symbol, **kwargs):
 
 
 def position_margin_history(self, symbol, **kwargs):
-
     check_required_parameter(symbol, "symbol")
 
     url_path = "/fapi/v1/positionMargin/history"
