@@ -2,7 +2,6 @@ import logging
 import threading
 from typing import Optional
 
-from binance.lib.utils import parse_proxies
 from websocket import (
     ABNF,
     WebSocketConnectionClosedException,
@@ -10,6 +9,8 @@ from websocket import (
     WebSocketTimeoutException,
     create_connection,
 )
+
+from binance.lib.utils import parse_proxies
 
 
 class BinanceSocketManager(threading.Thread):
@@ -78,7 +79,6 @@ class BinanceSocketManager(threading.Thread):
         data = ""
         while True:
             try:
-                print("Reading data from WebSocket...")
                 op_code, frame = self.ws.recv_data_frame(True)
             except WebSocketException as e:
                 if isinstance(e, WebSocketConnectionClosedException):
